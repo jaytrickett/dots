@@ -1,0 +1,7 @@
+#!/bin/bash
+#touch x
+#xclip -selection clipboard x
+#sleep 2
+grep '$1' $2 | xclip -selection clipboard
+#rm x
+

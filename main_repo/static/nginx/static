@@ -1,0 +1,12 @@
+server {
+        listen   80;
+        server_name static.trickett.us;
+
+        access_log  /var/log/nginx/access.log;
+
+
+        location / {
+                proxy_pass      http://10.0.5.8/;
+                include         /etc/nginx/proxy.conf;
+        }
+}

@@ -1,0 +1,29 @@
+setxkbmap -option caps:escape &
+sleep 1 &
+
+sh ~/.fehbg &
+sleep 1 &
+
+xcompmgr &
+sleep 1 &
+
+xfce4-power-manager &
+sleep 1 &
+
+tint2 &
+
+x-terminal-emulator -e tmux -2 &
+
+conky & 
+
+wicd-gtk --tray
+
+
+
+
+
+
+
+
+
+
