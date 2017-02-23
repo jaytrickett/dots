@@ -353,9 +353,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>pcmanfm</name>
+          <name>krusader</name>
         </startupnotify>
-        <command>pcmanfm</command>
+        <command>krusader</command>
       </action>
     </keybind>
     <keybind key="C-A-g">

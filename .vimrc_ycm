@@ -175,3 +175,5 @@ command Post  :1 | :.-1read ~/.vim/post | :cal cursor(3,0) | :j | :w | :!ssmtp f
 
 command Nnum set norelativenumber | set nonumber
 command Ynum set relativenumber | set number
+
+highlight Pmenu ctermbg=238
