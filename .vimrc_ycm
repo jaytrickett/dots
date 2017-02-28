@@ -168,7 +168,7 @@ let g:ctrlp_by_filename=1
 let g:ctrlp_show_hidden=1
 let g:ctrlp_working_path_mode='ra'
 let g:crtlp_clear_cache_on_exit=0
-set wildignore+=*.png,*.gif,*.jpg,*/tmp/*,*.so,*.swp,*.zip,*.tar,*.gz,~/downloads/*,~/purgatory/*,~/graphics/*,~/pictures/*,~/videos/*,~/music/*
+set wildignore+=*.png,*.gif,*.jpg,*/tmp/*,*.so,*.swp,*.zip,*.tar,*.gz,~/Documents/*,~/Downloads/*,~/Pictures/*,~/Videos/*,~/Music/*,~/tb/*,~/dock/*
 
 "Custom commands
 command Post  :1 | :.-1read ~/.vim/post | :cal cursor(3,0) | :j | :w | :!ssmtp fuwa174yese@post.wordpress.com <'%:p'
@@ -176,4 +176,5 @@ command Post  :1 | :.-1read ~/.vim/post | :cal cursor(3,0) | :j | :w | :!ssmtp f
 command Nnum set norelativenumber | set nonumber
 command Ynum set relativenumber | set number
 
-highlight Pmenu ctermbg=238
+highlight Pmenu ctermbg=138
+

@@ -1,24 +1,27 @@
 setxkbmap -option caps:escape &
 sleep 1 &
 
-sh ~/.fehbg &
+xinput --map-to-output $(xinput list --id-only "eGalax Inc. eGalaxTouch EXC3000-0367-44.01.00") eDP
+
+xrandr --output HDMI-A-0 --mode 1600x900 --pos 1368x0 &
+
+sh ~/.bg/bg &
 sleep 1 &
 
 xcompmgr &
 sleep 1 &
 
 xfce4-power-manager &
-sleep 1 &
+
+pnmixer &
 
 tint2 &
 
-x-terminal-emulator -e tmux -2 &
+xterm -e tmux -2 &
 
 conky & 
 
-wicd-gtk --tray
-
-
+wicd-gtk --tray 
 
 
 

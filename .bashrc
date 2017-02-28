@@ -96,6 +96,7 @@ alias v.='vim .'
 alias gti='git'
 alias sp='source .profile && source .bashrc'
 alias lr='find .'
+alias f="ranger"
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -146,3 +147,5 @@ export NVM_DIR="/home/jason/.nvm"
 
 export NODE_PATH="$HOME/.nvm/versions/node/v6.2.2/bin"
 export NODE_PATH="$HOME/.nvm/versions/node/v6.2.2/lib/node_modules:$NODE_PATH"
+
+[ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" >/dev/null

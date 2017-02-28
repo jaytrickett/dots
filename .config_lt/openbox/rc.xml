@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Onyx</name>
+    <name>Nightmare</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -155,7 +155,7 @@
   <margins>
     <top>0</top>
     <bottom>0</bottom>
-    <left>0</left>
+    <left>90</left>
     <right>0</right>
   </margins>
   <dock>
@@ -326,18 +326,27 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>x-terminal-emulator</name>
+          <name>xterm</name>
         </startupnotify>
-        <command>x-terminal-emulator -e tmux -2</command>
+        <command>xterm -e tmux -2</command>
       </action>
     </keybind>
     <keybind key="C-A-b">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>firefox</name>
+          <name>vivaldi-stable</name>
         </startupnotify>
-        <command>firefox</command>
+				<command>vivaldi-stable</command>
+      </action>
+    </keybind>
+		 <keybind key="C-A-v">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>firefox-trunk</name>
+        </startupnotify>
+        <command>firefox-trunk</command>
       </action>
     </keybind>
     <keybind key="C-A-r">
@@ -754,7 +763,7 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
-    <application name="x-terminal-emulator">
+    <application name="xterm">
       <decor>no</decor>
       <maximized>yes</maximized>
     </application>
