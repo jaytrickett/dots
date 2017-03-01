@@ -8,7 +8,7 @@ xrandr --output HDMI-A-0 --mode 1600x900 --pos 1368x0 &
 sh ~/.bg/bg &
 sleep 1 &
 
-xcompmgr &
+compton &
 sleep 1 &
 
 xfce4-power-manager &
@@ -17,7 +17,7 @@ pnmixer &
 
 tint2 &
 
-xterm -e tmux -2 &
+uxterm -e tmux -2 &
 
 conky & 
 
