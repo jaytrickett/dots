@@ -178,3 +178,4 @@ command Ynum set relativenumber | set number
 
 highlight Pmenu ctermbg=138
 
+set mouse=a

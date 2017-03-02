@@ -771,7 +771,17 @@
       <decor>no</decor>
       <maximized>yes</maximized>
     </application>
-    <!--
+		<application class="qjackctl">
+			<desktop>4</desktop>
+		</application>
+		<application class="calfjackhost">
+			<focus>no</focus>
+			<desktop>4</desktop>
+		</application>
+		<application class="vlc">
+			<desktop>4</desktop>
+		</application>
+	    <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
   # you may use one or more of the name/class/role/title/type rules to specify
