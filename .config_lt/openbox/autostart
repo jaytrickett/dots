@@ -1,5 +1,5 @@
-setxkbmap -option caps:escape &
-sleep 1 &
+#setxkbmap -option caps:escape &
+#sleep 1 &
 
 xinput --map-to-output $(xinput list --id-only "eGalax Inc. eGalaxTouch EXC3000-0367-44.01.00") eDP
 
@@ -21,9 +21,8 @@ uxterm -e tmux -2 &
 
 conky & 
 
-wicd-gtk --tray &
+wicd-gtk --tray 
 
-qjackctl
  
 
 

@@ -339,16 +339,16 @@
         </startupnotify>
         <command>vivaldi-stable</command>
       </action>
-    </keybind>
+		</keybind>
     <keybind key="C-A-v">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>firefox-trunk</name>
-        </startupnotify>
-        <command>firefox-trunk</command>
-      </action>
-    </keybind>
+					<name>virtualbox</name>
+				</startupnotify>
+				<command>virtualbox</command>
+			</action>
+		</keybind>
     <keybind key="C-A-r">
       <action name="Execute">
         <startupnotify>
