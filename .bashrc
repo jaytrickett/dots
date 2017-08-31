@@ -149,3 +149,4 @@ export NODE_PATH="$HOME/.nvm/versions/node/v6.2.2/bin"
 export NODE_PATH="$HOME/.nvm/versions/node/v6.2.2/lib/node_modules:$NODE_PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

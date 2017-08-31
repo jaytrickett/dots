@@ -21,9 +21,10 @@ uxterm -e tmux -2 &
 
 conky & 
 
-wicd-gtk --tray 
+wicd-gtk --tray
 
- 
+
+
 
 
 
