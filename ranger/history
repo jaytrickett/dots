@@ -1,0 +1,50 @@
+search ,bg
+search ,bg'
+search .bg
+search .fehbg
+search Dow
+cd /home/jason/Pictures
+x
+open_with
+rm
+yy
+umount dock
+shell umount dock
+q\
+cd Pictures/
+shell sudo fdisk -l
+cd  dock
+cd .dots/
+cd dick
+cd dock
+cd Music
+cd /home/jason/Music/My Music
+open_with moc
+cd /home/jason/Music/backup2
+cd  Music
+search buckley
+cd Music/
+touch 
+shell tar -xf eqsets.tar.gz
+cd radio
+cd 
+delete 
+open_with ./
+open_with shell
+shell cc
+edit
+search untitled
+search face
+cd bg
+cd  .bg
+shell feh --bg-scale chevelle_1967_wallpaper_by_rimete-db100on.jpg
+shell feh --bg-scale planets_pack_by_opreadorin1-dap3ym9.jpg
+shell feh --bg planets_pack_by_opreadorin1-dap3ym9.jpg
+shell feh --bg- planets_pack_by_opreadorin1-dap3ym9.jpg
+shell feh --bg-tile planets_pack_by_opreadorin1-dap3ym9.jpg
+shell feh --bg-fill planets_pack_by_opreadorin1-dap3ym9.jpg
+delete
+cd .bg
+
+open_with 
+sudo gimp panel.png

@@ -19,9 +19,11 @@ tint2 &
 
 uxterm -e tmux -2 &
 
-conky & 
+conky &
 
-wicd-gtk --tray
+nm-applet
+
+
 
 
 

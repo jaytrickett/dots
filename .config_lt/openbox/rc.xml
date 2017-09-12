@@ -335,10 +335,19 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>vivaldi</name>
+					<name>chrome</name>
         </startupnotify>
-        <command>vivaldi</command>
+        <command>chromium-browser</command>
       </action>
+			</keybind>
+			<keybind key="C-A-c">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+					<name>Jaxx</name>
+				</startupnotify>
+				<command>Jaxx</command>	
+			</action>
 		</keybind>
     <keybind key="C-A-v">
       <action name="Execute">
