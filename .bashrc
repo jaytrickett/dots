@@ -56,6 +56,16 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+#Color Codes for Prompt
+#Black: 30
+#Blue: 34
+#Cyan: 36
+#Green: 32
+#Purple: 35
+#Red: 31
+#White: 37
+#Yellow: 33
+
 THEIP=$(/sbin/ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}')
 #PS1="\[\033[01;31m\]\u@"$THEIP" \w $\[\033[00m\] ";
 
