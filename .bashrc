@@ -56,13 +56,13 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-THEIP=$(ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}')
+THEIP=$(/sbin/ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}')
 #PS1="\[\033[01;31m\]\u@"$THEIP" \w $\[\033[00m\] ";
 
 if [ "$color_prompt" = yes ]; then
-    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@"$THEIP"\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+    PS1="\[\033[01;36m\]\u\[\033[01;32m\]@\[\033[01;35m\]"$THEIP"\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 else
-    PS1="${debian_chroot:+($debian_chroot)}\u@"$THEIP":\w\$ "
+    PS1="\u@"$THEIP":\w\$ "
 fi
 unset color_prompt force_color_prompt
 
