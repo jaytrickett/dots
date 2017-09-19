@@ -322,6 +322,25 @@
       </action>
     </keybind>
     <!-- Keybindings for running s -->
+
+    <keybind key="C-A-e">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>gray</name>
+        </startupnotify>
+				<command>gray</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-w">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+					<name>bg</name>
+        </startupnotify>
+				<command>bg</command>
+      </action>
+    </keybind>
     <keybind key="C-A-t">
       <action name="Execute">
         <startupnotify>

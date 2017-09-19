@@ -5,7 +5,7 @@ xinput --map-to-output $(xinput list --id-only "eGalax Inc. eGalaxTouch EXC3000-
 
 xrandr --output HDMI-A-0 --mode 1600x900 --pos 1368x0 &
 
-sh ~/.bg/bg &
+sh ~/bin/bg &
 sleep 1 &
 
 compton &

@@ -66,8 +66,7 @@ fi
 #White: 37
 #Yellow: 33
 
-THEIP=$(/sbin/ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}')
-#PS1="\[\033[01;31m\]\u@"$THEIP" \w $\[\033[00m\] ";
+THEIP=$(/sbin/ifconfig | ack -1 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
 
 if [ "$color_prompt" = yes ]; then
     PS1="\[\033[01;36m\]\u\[\033[01;32m\]@\[\033[01;35m\]"$THEIP"\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
@@ -111,8 +110,10 @@ alias gti='git'
 alias sp='source .profile && source .bashrc'
 alias lr='find .'
 alias f="ranger"
-
-
+alias sshfs-ch='echo -e "\n Start \n sshfs -o "IdentityFile=~/path/to/pem" user@192.168.1.1:/remote/directory ~/local/directory \n Stop \n fuseremount -u ~/local/directory \n"'
+alias dbox='VBoxManage startvm dev-pool --type headless'
+alias gray='feh --bg-scale ~/.bg/gray.png'
+alias speed='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #sleep 10; alert
@@ -153,14 +154,17 @@ export PATH="$HOME/.nvm/versions/node/v6.2.2/bin:$PATH"
 
 export PATH="/sbin:$PATH"
 
-export EDITOR="vim"
-
 export NVM_DIR="/home/jason/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-
 export NODE_PATH="$HOME/.nvm/versions/node/v6.2.2/bin"
+
 export NODE_PATH="$HOME/.nvm/versions/node/v6.2.2/lib/node_modules:$NODE_PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
+
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export EDITOR="vim"
+
+export BROWSER=w3m
