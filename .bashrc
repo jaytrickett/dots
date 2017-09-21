@@ -114,6 +114,7 @@ alias sshfs-ch='echo -e "\n Start \n sshfs -o "IdentityFile=~/path/to/pem" user@
 alias dbox='VBoxManage startvm dev-pool --type headless'
 alias gray='feh --bg-scale ~/.bg/gray.png'
 alias speed='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+alias myscrot='scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #sleep 10; alert

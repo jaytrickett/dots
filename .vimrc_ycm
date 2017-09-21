@@ -4,27 +4,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/UltiSnips
 call vundle#begin()
 
+
 Plugin 'VundleVim/Vundle.vim'
 
 "Managed by Vundle
-
-Plugin 'vim-scripts/loremipsum'
-Plugin 'tpope/vim-haml'
-Plugin 'pangloss/vim-javascript'
-Plugin 'moll/vim-node'
-Plugin 'othree/html5-syntax.vim'
-Plugin 'othree/html5.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'JulesWang/css.vim'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'tomtom/tlib_vim.git'
-Plugin 'MarcWeber/vim-addon-mw-utils.git'
-Plugin 'kien/ctrlp.vim.git'
 Plugin 'bling/vim-airline.git'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'docunext/closetag.vim.git'
-"Plugin 'powerline/fonts.git'
+Plugin 'powerline/fonts.git'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'jonathanfilip/vim-lucius.git'
 Plugin 'Valloric/YoucompleteMe'
@@ -33,14 +21,17 @@ Plugin 'mattn/webapi-vim'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
-
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'thaerkh/vim-workspace'
 call vundle#end()
 
 filetype plugin indent on
 
 "Vim Native Settings
+set autochdir
 set t_Co=256
 set relativenumber
 set number
@@ -60,26 +51,13 @@ set incsearch
 set tabstop=4
 set softtabstop=4
 set expandtab
-"set foldmethod=syntax
-"set foldlevelstart=2
 syntax enable
-"filetype plugin on
-"filetype indent on
 set tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 
-"Remember info about open buffers on close
-set viminfo^=%
-
-"Persistant folding
-"au BufWrite ?* mkview
-"au BufRead ?* silent loadview
-
-"Set default Netrw to tree view
-let g:netrw_liststyle=3
 
 "Colorscheme
 set background=light
-colorscheme ron    
+colorscheme ron
 
 " Return to last edit position when opening files ()
 autocmd BufReadPost *
@@ -87,12 +65,17 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
-"Custom Key-Bindings 
+"Custom Key-Bindings
 
 "Remap leader to ,
 let mapleader=","
 
 "Leader b BufOnly (delete all buffers except the current one)
+noremap <silent> <leader>f		:NERDTreeToggle<CR>
+vnoremap <silent> <leader>f		:<NERDTreeToggleCR>
+inoremap <silent> <leader>f		:<NERDTreeToggleCR>
+
+"Nerdtree Toggle
 noremap <silent> <leader>b		:BufOnly<CR>
 vnoremap <silent> <leader>b		:Bufonly<CR>
 inoremap <silent> <leader>b		:BufOnly<CR>
@@ -132,7 +115,7 @@ inoremap <silent> <leader>1		:colorschem ron<CR>
 
 
 "leader-a to envoke saveas
-noremap <silent> <leader>a		:saveas 
+noremap <silent> <leader>a		:saveas
 vnoremap <silent> <leader>a		:saveas
 inoremap <silent> <leader>a		:saveas	
 
@@ -149,14 +132,14 @@ nmap <leader>w :bp <BAR> bd #<CR>
 let g:ycm_key_list_select_completion = ['<C-b>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-y>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:UltiSnipsSnippetDir = '/home/jason/UltiSnips'
+"let g:UltiSnipsSnippetDir = '/home/jason/UltiSnips'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-"Airline settings 
+"Airline settings
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme='cool'
@@ -166,16 +149,13 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 "Ctrlp settings
 let g:ctrlp_by_filename=1
 let g:ctrlp_show_hidden=1
-let g:ctrlp_working_path_mode='ra'
+let g:ctrlp_working_path_mode=0
 let g:crtlp_clear_cache_on_exit=0
 set wildignore+=*.png,*.gif,*.jpg,*/tmp/*,*.so,*.swp,*.zip,*.tar,*.gz,~/Documents/*,~/Downloads/*,~/Pictures/*,~/Videos/*,~/Music/*,~/tb/*,~/dock/*
 
 "Custom commands
-command Post  :1 | :.-1read ~/.vim/post | :cal cursor(3,0) | :j | :w | :!ssmtp fuwa174yese@post.wordpress.com <'%:p'
-
-command Nnum set norelativenumber | set nonumber
-command Ynum set relativenumber | set number
-
 highlight Pmenu ctermbg=138
 
 set mouse=a
+
+"autocmd VimLeave * mksession! $pwd.vimsession

@@ -267,7 +267,12 @@
     <!-- Take a screenshot of the current window with gnome-screenshot when Alt+Print are pressed -->
     <keybind key="A-Print">
       <action name="Execute">
-        <command>gnome-screenshot -w</command>
+				<command>scrot -s ~/Pictures/Screenshots/%b%d::%H%M%S.png</command>
+      </action>
+    </keybind>
+    <keybind key="A-S-Print">
+      <action name="Execute">
+				<command>scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png</command>
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
@@ -422,10 +427,10 @@
         <command>slimlock</command>
       </action>
     </keybind>
-    <!-- Launch gnome-screenshot when Print is pressed -->
+    <!-- Launch screenshot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
-        <command>gnome-screenshot</command>
+        <command>scrot -s</command>
       </action>
     </keybind>
   </keyboard>
