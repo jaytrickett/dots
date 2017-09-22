@@ -72,7 +72,7 @@ autocmd BufReadPost *
 "Remap leader to ,
 let mapleader=","
 
-"Leader b BufOnly (delete all buffers except the current one)
+"Leader f toggle NerdTree
 noremap <silent> <leader>f		:NERDTreeToggle<CR>
 vnoremap <silent> <leader>f		:<NERDTreeToggleCR>
 inoremap <silent> <leader>f		:<NERDTreeToggleCR>
