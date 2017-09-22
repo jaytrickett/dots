@@ -26,6 +26,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'thaerkh/vim-workspace'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 filetype plugin indent on
@@ -119,6 +120,10 @@ noremap <silent> <leader>a		:saveas
 vnoremap <silent> <leader>a		:saveas
 inoremap <silent> <leader>a		:saveas	
 
+"leader-a to envoke saveas
+noremap <silent> <leader>s		:ToggleWorkspace<CR>
+vnoremap <silent> <leader>s		:ToggleWorkspace<CR>
+inoremap <silent> <leader>s		:ToggleWorkspace<CR>
 
 "make buffers act like tabs
 set hidden
