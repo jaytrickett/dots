@@ -152,6 +152,19 @@ let g:airline_theme='cool'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "M",
+    \ "Staged"    : "*",
+    \ "Untracked" : "!T",
+    \ "Renamed"   : "R",
+    \ "Unmerged"  : "!M",
+    \ "Deleted"   : "D",
+    \ "Dirty"     : "P",
+    \ "Clean"     : "C",
+    \ 'Ignored'   : 'I',
+    \ "Unknown"   : "?"
+    \ }
+
 "Ctrlp settings
 let g:ctrlp_by_filename=1
 let g:ctrlp_show_hidden=1
