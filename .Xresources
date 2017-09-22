@@ -1,0 +1,27 @@
+XTerm*locale: true
+Xterm*backarrowKey: false
+xterm*vt100.Translations: #override Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
+xterm*vt100.locale: true
+xterm*utf8: 2
+XTerm*font: -*-Furacode Nerd Font Mono-medium-r-normal--*-*-*-*-*-iso10646-1
+xterm*faceName: FuraCode Nerd Font Mono:style=Regular
+xterm*faceSize: 8
+Xterm*background: rgb:00/00/00
+Xterm*foreground: rgb:ff/ff/ff
+Xterm*color0:     rgb:00/00/00
+Xterm*color1:     rgb:d3/62/65
+Xterm*color2:     rgb:ae/ce/91
+Xterm*color3:     rgb:e7/e1/8c
+Xterm*color4:     rgb:7a/7a/b0
+Xterm*color5:     rgb:96/3c/59
+Xterm*color6:     rgb:41/81/79
+Xterm*color7:     rgb:be/be/be
+Xterm*color8:     rgb:66/66/66
+Xterm*color9:     rgb:ef/81/71
+Xterm*color10:    rgb:e5/f7/79
+Xterm*color11:    rgb:ff/f7/96
+Xterm*color12:    rgb:41/86/be
+Xterm*color13:    rgb:ef/9e/be
+Xterm*color14:    rgb:71/be/be
+Xterm*ScrollKey: true
+
