@@ -77,18 +77,10 @@ noremap <silent> <leader>f		:NERDTreeToggle<CR>
 vnoremap <silent> <leader>f		:<NERDTreeToggleCR>
 inoremap <silent> <leader>f		:<NERDTreeToggleCR>
 
-"Nerdtree Toggle
+"Delete unused buffers
 noremap <silent> <leader>b		:BufOnly<CR>
 vnoremap <silent> <leader>b		:Bufonly<CR>
 inoremap <silent> <leader>b		:BufOnly<CR>
-
-"Leader e map to :E
-noremap <silent> <leader>e		:E<CR>
-vnoremap <silent> <leader>e		:E<CR>
-inoremap <silent> <leader>e		:E<CR>
-
-"save session(reopen with vim -S) this will save all tabs and or splits etc.
-nnoremap <leader>m :mksession!<CR>
 
 "source .vimrc with leader-v
 noremap <silent> <leader>v		:source ~/.vimrc<CR>
@@ -114,7 +106,6 @@ inoremap <silent> <leader>2		:colorschem lucius<CR>
 noremap <silent> <leader>1		:colorschem ron<CR>
 vnoremap <silent> <leader>1		:colorschem ron<CR>
 inoremap <silent> <leader>1		:colorschem ron<CR>	
-
 
 "leader-a to envoke saveas
 noremap <silent> <leader>a		:saveas
@@ -167,12 +158,6 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = '^'
-"Ctrlp settings
-let g:ctrlp_by_filename=1
-let g:ctrlp_show_hidden=1
-let g:ctrlp_working_path_mode=0
-let g:crtlp_clear_cache_on_exit=0
-set wildignore+=*.png,*.gif,*.jpg,*/tmp/*,*.so,*.swp,*.zip,*.tar,*.gz,~/Documents/*,~/Downloads/*,~/Pictures/*,~/Videos/*,~/Music/*,~/tb/*,~/dock/*
 
 "Custom commands
 highlight Pmenu ctermbg=138

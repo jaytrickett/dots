@@ -8,33 +8,21 @@ Plugin 'VundleVim/Vundle.vim'
 
 "Managed by Vundle
 
-Plugin 'vim-scripts/loremipsum'
-Plugin 'tpope/vim-haml'
-Plugin 'pangloss/vim-javascript'
-Plugin 'moll/vim-node'
-Plugin 'othree/html5-syntax.vim'
-Plugin 'othree/html5.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'JulesWang/css.vim'
 Plugin 'tpope/vim-fugitive.git'
-Plugin 'tomtom/tlib_vim.git'
 Plugin 'MarcWeber/vim-addon-mw-utils.git'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'bling/vim-airline.git'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'docunext/closetag.vim.git'
-"Plugin 'powerline/fonts.git'
+Plugin 'powerline/fonts.git'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'jonathanfilip/vim-lucius.git'
-"Plugin 'Valloric/YoucompleteMe'
 Plugin 'Rykka/colorv.vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'hail2u/vim-css3-syntax'
-"Plugin 'SirVer/ultisnips'
-"Plugin 'honza/vim-snippets'
-"Plugin 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 
@@ -79,7 +67,7 @@ let g:netrw_liststyle=3
 
 "Colorscheme
 set background=light
-colorscheme ron    
+colorscheme ron
 
 " Return to last edit position when opening files ()
 autocmd BufReadPost *
@@ -87,7 +75,7 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
-"Custom Key-Bindings 
+"Custom Key-Bindings
 
 "Remap leader to ,
 let mapleader=","
@@ -132,7 +120,7 @@ inoremap <silent> <leader>1		:colorschem ron<CR>
 
 
 "leader-a to envoke saveas
-noremap <silent> <leader>a		:saveas 
+noremap <silent> <leader>a		:saveas
 vnoremap <silent> <leader>a		:saveas
 inoremap <silent> <leader>a		:saveas	
 
@@ -156,7 +144,7 @@ nmap <leader>w :bp <BAR> bd #<CR>
 "let g:UltiSnipsJumpForwardTrigger = "<tab>"
 "let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-"Airline settings 
+"Airline settings
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme='cool'
@@ -173,4 +161,4 @@ set wildignore+=*.png,*.gif,*.jpg,*/tmp/*,*.so,*.swp,*.zip,*.tar,*.gz,~/download
 "Custom commands
 command Post  :1 | :.-1read ~/.vim/post | :cal cursor(3,0) | :j | :w | :!ssmtp fuwa174yese@post.wordpress.com <'%:p'
 
- 
+
