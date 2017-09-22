@@ -66,6 +66,7 @@ fi
 #White: 37
 #Yellow: 33
 
+#Show ip address at prompt
 THEIP=$(/sbin/ifconfig | ack -1 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
 
 if [ "$color_prompt" = yes ]; then
