@@ -121,7 +121,7 @@ noremap <silent> <leader>a		:saveas
 vnoremap <silent> <leader>a		:saveas
 inoremap <silent> <leader>a		:saveas	
 
-"leader-a to envoke saveas
+"leader-s to start persitant session
 noremap <silent> <leader>s		:ToggleWorkspace<CR>
 vnoremap <silent> <leader>s		:ToggleWorkspace<CR>
 inoremap <silent> <leader>s		:ToggleWorkspace<CR>
@@ -177,4 +177,3 @@ highlight Pmenu ctermbg=138
 
 set mouse=a
 
-"autocmd VimLeave * mksession! $pwd.vimsession
