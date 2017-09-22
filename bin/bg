@@ -1,0 +1,27 @@
+#!/bin/sh
+
+day=$( date +%a )
+
+case $day in
+	"Mon") 
+feh  --bg-scale '/home/jason/.bg/bg_1.jpg' 
+		;;
+	"Tue") 
+feh  --bg-scale '/home/jason/.bg/bg_2.jpg' 
+		;;
+	"Wed") 
+feh  --bg-scale '/home/jason/.bg/bg_3.jpg' 
+		;;
+	"Thu") 
+feh  --bg-scale '/home/jason/.bg/bg_4.jpg' 
+		;;
+	"Fri") 
+feh  --bg-scale '/home/jason/.bg/bg_5.jpg' 
+		;;
+	"Sat") 
+feh  --bg-scale '/home/jason/.bg/bg_6.jpg' 
+		;;
+	"Sun") 
+feh  --bg-scale '/home/jason/.bg/bg_7.jpg' 
+		;;
+esac

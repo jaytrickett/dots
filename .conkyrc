@@ -1,0 +1,91 @@
+use_xft yes
+xftfont InPutMono-medium:pixelsize=9
+xftalpha 0.8
+text_buffer_size 2048
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_transparent no #yes
+own_window_argb_visual yes
+own_window_argb_value 179
+own_window_type override
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 700 760
+maximum_width 80
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders no
+stippled_borders 0
+border_outer_margin 1
+border_width 0
+default_color D0D0D0
+#default_shade_color black
+default_outline_color grey
+own_window_colour black
+alignment middle_left
+gap_x 5
+gap_y 0
+no_buffers yes
+uppercase no
+cpu_avg_samples 1
+net_avg_samples 1
+override_utf8_locale yes
+use_spacer none
+draw_graph_borders yes
+
+
+TEXT
+
+
+
+
+
+
+
+
+
+
+${alignc}System
+${alignc}$nodename
+${alignc}$sysname $machine
+${alignc}$kernel
+
+UpTime: ${alignr 4}$uptime_short
+${color gray}Temp:${alignr 4}${acpitemp}C
+
+${alignc}${color gray}CPUs
+CPU0: ${cpu cpu1}${alignr 1}${color #96611b}${cpubar cpu1 5,28}
+${color gray}CPU1: ${cpu cpu2}${alignr 1}${color #96611b}${cpubar cpu2 5,28}
+${color gray}CPU2: ${cpu cpu3}${alignr 1}${color #96611b}${cpubar cpu3 5,28}
+${color gray}CPU3: ${cpu cpu4}${alignr 1}${color #96611b}${cpubar cpu4 5,28}
+
+${alignc}${color gray}Mem
+Ram:$memperc% ${alignr 1}${color #96611b}${membar 5,28}
+${color gray}Swp:$swapperc% ${alignr 1}${color #96611b}${swapbar 5,28}
+
+${alignc}${color gray}Disks
+SSD:${fs_used_perc /}% ${alignr 1}${color #96611b}${fs_bar 5,28 /}
+${color gray}HDD:${fs_used_perc /home/jason/tb/}% ${alignr 1}${color #96611b}${fs_bar 5,28 /}
+
+${color gray}I/O: ${alignr 4}$diskio
+${alignc}${color #2d6e23}${diskiograph 20,70}
+${color gray}
+${alignc} Network 
+Eth:
+${alignc}${color green}${addr enp1s0}
+Up:${alignr 4}${upspeed enp1s0}
+Down:${alignr 4}${downspeed enp1s0}
+
+${color gray}WiFi:
+${color green}${alignc}${addr wlo1}
+Up:${alignr 4}${upspeed wlo1}
+Down:${alignr 4}${downspeed wlo1}
+
+
+${alignc}${color #EDED16}${exec date +"%r"}
+${alignc}${color #EDED16}${exec date +"%D"}
+
+
