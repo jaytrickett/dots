@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Nightmare</name>
+    <name>1977-Grey</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -57,57 +57,57 @@
     <keepBorder>no</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>sans</name>
+      <name>Source Code Pro for Powerline</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>sans</name>
+      <name>Source Code Pro for Powerline Ultra-Light</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>sans</name>
+      <name>Source Code Pro for Powerline Medium</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>sans</name>
-      <size>9</size>
+      <name>Source Code Pro for Powerline Light</name>
+      <size>8</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>sans</name>
+      <name>Source Code Pro for Powerline</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Italic</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>sans</name>
+      <name>Zekton</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Italic</slant>
       <!-- 'italic' or 'normal' -->
     </font>
   </theme>
@@ -179,6 +179,9 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
+		<keybind key="Menu">
+			<action name="ShowMenu"><menu>root-menu</menu>menu></action>action>
+		</keybind>keybind>
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
         <to>left</to>
@@ -267,12 +270,12 @@
     <!-- Take a screenshot of the current window with gnome-screenshot when Alt+Print are pressed -->
     <keybind key="A-Print">
       <action name="Execute">
-				<command>scrot -s ~/Pictures/Screenshots/%b%d::%H%M%S.png</command>
+        <command>scrot -s ~/Pictures/Screenshots/%b%d::%H%M%S.png</command>
       </action>
     </keybind>
     <keybind key="A-S-Print">
       <action name="Execute">
-				<command>scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png</command>
+        <command>scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png</command>
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
@@ -327,23 +330,22 @@
       </action>
     </keybind>
     <!-- Keybindings for running s -->
-
     <keybind key="C-A-e">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
           <name>gray</name>
         </startupnotify>
-				<command>gray</command>
+        <command>gray</command>
       </action>
     </keybind>
     <keybind key="C-A-w">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-					<name>bg</name>
+          <name>bg</name>
         </startupnotify>
-				<command>bg</command>
+        <command>bg</command>
       </action>
     </keybind>
     <keybind key="C-A-t">
@@ -359,29 +361,29 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-					<name>chrome</name>
+          <name>chrome</name>
         </startupnotify>
         <command>chromium-browser</command>
       </action>
-			</keybind>
-			<keybind key="C-A-c">
+    </keybind>
+    <keybind key="C-A-c">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-					<name>Jaxx</name>
-				</startupnotify>
-				<command>Jaxx</command>	
-			</action>
-		</keybind>
+          <name>Jaxx</name>
+        </startupnotify>
+        <command>Jaxx</command>
+      </action>
+    </keybind>
     <keybind key="C-A-v">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-					<name>virtualbox</name>
-				</startupnotify>
-				<command>virtualbox</command>
-			</action>
-		</keybind>
+          <name>virtualbox</name>
+        </startupnotify>
+        <command>virtualbox</command>
+      </action>
+    </keybind>
     <keybind key="C-A-r">
       <action name="Execute">
         <startupnotify>
@@ -506,7 +508,7 @@
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximize"/>
+        <action name="ToggleMaximizeFull"/>
       </mousebind>
       <mousebind button="Up" action="Click">
         <action name="if">
@@ -804,17 +806,17 @@
       <decor>no</decor>
       <maximized>yes</maximized>
     </application>
-		<application class="qjackctl">
-			<desktop>4</desktop>
-		</application>
-		<application class="calfjackhost">
-			<focus>no</focus>
-			<desktop>4</desktop>
-		</application>
-		<application class="vlc">
-			<desktop>4</desktop>
-		</application>
-	    <!--
+    <application class="qjackctl">
+      <desktop>4</desktop>
+    </application>
+    <application class="calfjackhost">
+      <focus>no</focus>
+      <desktop>4</desktop>
+    </application>
+    <application class="vlc">
+      <desktop>4</desktop>
+    </application>
+    <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
   # you may use one or more of the name/class/role/title/type rules to specify

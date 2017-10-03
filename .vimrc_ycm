@@ -27,13 +27,15 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'thaerkh/vim-workspace'
 Plugin 'tpope/vim-fugitive'
+Plugin 'rhysd/npm-filetypes.vim'
+Plugin 'Shutnik/jshint2.vim'
 call vundle#end()
 
 filetype plugin indent on
 
 "Vim Native Settings
 set encoding=utf-8
-set autochdir
+"set autochdir
 set t_Co=256
 set relativenumber
 set number
