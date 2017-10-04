@@ -73,7 +73,7 @@ ${color gray}HDD:${fs_used_perc /home/jason/tb/}% ${alignr 1}${color #96611b}${f
 ${color gray}I/O: ${alignr 4}$diskio
 ${alignc}${color #2d6e23}${diskiograph 20,70}
 ${color gray}
-${alignc} Network 
+${alignc} Network
 Eth:
 ${alignc}${color green}${addr enp1s0}
 Up:${alignr 4}${upspeed enp1s0}
