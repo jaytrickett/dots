@@ -26,6 +26,9 @@ Plugin 'Shutnik/jshint2.vim'
 Plugin 'sukima/xmledit'
 Plugin 'Raimondi/delimitMate'
 Plugin 'gregsexton/gitv'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
@@ -148,6 +151,9 @@ let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = '^'
 let NERDTreeQuitOnOpen=1
 
+"Syntastic settings
+let g:syntastic_go_checkers = ['golint']
+let g:syntastic_javascript_checkers = ['jshint']
 
 set mouse=a
 
