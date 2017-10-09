@@ -1,40 +1,37 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/UltiSnips
 call vundle#begin()
 
 
 Plugin 'VundleVim/Vundle.vim'
 
 "Managed by Vundle
-Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline.git'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'docunext/closetag.vim.git'
 Plugin 'powerline/fonts.git'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'jonathanfilip/vim-lucius.git'
 Plugin 'Valloric/YoucompleteMe'
-Plugin 'Rykka/colorv.vim'
-Plugin 'mattn/webapi-vim'
 Plugin 'vim-scripts/BufOnly.vim'
-Plugin 'hail2u/vim-css3-syntax'
 Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'thaerkh/vim-workspace'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rhysd/npm-filetypes.vim'
 Plugin 'Shutnik/jshint2.vim'
+Plugin 'sukima/xmledit'
+Plugin 'Raimondi/delimitMate'
+Plugin 'gregsexton/gitv'
+
 call vundle#end()
 
 filetype plugin indent on
-
-"Vim Native Settings
+runtime macros/matchit.vim
 set encoding=utf-8
-"set autochdir
 set t_Co=256
 set relativenumber
 set number
@@ -51,32 +48,26 @@ set nowb
 set noswapfile
 set autoread
 set incsearch
+syntax enable
 set tabstop=4
 set softtabstop=4
-set expandtab
-syntax enable
-set tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
-
+set shiftwidth=4
+set noexpandtab
+set pastetoggle=<F2>
 
 "Colorscheme
 set background=light
 colorscheme ron
-
-" Return to last edit position when opening files ()
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-
+	
 "Custom Key-Bindings
 
 "Remap leader to ,
 let mapleader=","
 
 "Leader f toggle NerdTree
-noremap <silent> <leader>f		:NERDTreeToggle<CR>
-vnoremap <silent> <leader>f		:<NERDTreeToggleCR>
-inoremap <silent> <leader>f		:<NERDTreeToggleCR>
+noremap <silent> <leader>f		:NERDTreeTabsToggle<CR>
+vnoremap <silent> <leader>f		:<NERDTreeTabsToggleCR>
+inoremap <silent> <leader>f		:<NERDTreeTabsToggleCR>
 
 "Delete unused buffers
 noremap <silent> <leader>b		:BufOnly<CR>
@@ -101,22 +92,18 @@ inoremap <silent> <leader>n		:nohlsearch<CR>
 "leader-2 to switch to solid background
 noremap <silent> <leader>2		:colorschem lucius<CR>
 vnoremap <silent> <leader>2		:colorschem lucius<CR>
-inoremap <silent> <leader>2		:colorschem lucius<CR>	
+inoremap <silent> <leader>2		:colorschem lucius<CR>
 
 "leader-1 to switch to transparent background
 noremap <silent> <leader>1		:colorschem ron<CR>
 vnoremap <silent> <leader>1		:colorschem ron<CR>
-inoremap <silent> <leader>1		:colorschem ron<CR>	
+inoremap <silent> <leader>1		:colorschem ron<CR>
 
 "leader-a to envoke saveas
 noremap <silent> <leader>a		:saveas
 vnoremap <silent> <leader>a		:saveas
-inoremap <silent> <leader>a		:saveas	
+inoremap <silent> <leader>a		:saveas
 
-"leader-s to start persitant session
-noremap <silent> <leader>s		:ToggleWorkspace<CR>
-vnoremap <silent> <leader>s		:ToggleWorkspace<CR>
-inoremap <silent> <leader>s		:ToggleWorkspace<CR>
 
 "make buffers act like tabs
 set hidden
@@ -159,9 +146,31 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = '^'
+let NERDTreeQuitOnOpen=1
 
-"Custom commands
-highlight Pmenu ctermbg=138
 
 set mouse=a
 
+function! MakeSession()
+  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  if (filewritable(b:sessiondir) != 2)
+    exe 'silent !mkdir -p ' b:sessiondir
+    redraw!
+  endif
+  let b:filename = b:sessiondir . '/session.vim'
+  exe "mksession! " . b:filename
+endfunction
+
+function! LoadSession()
+  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  let b:sessionfile = b:sessiondir . "/session.vim"
+  if (filereadable(b:sessionfile))
+    exe 'source ' b:sessionfile
+  else
+    echo "No session loaded."
+  endif
+endfunction
+au VimEnter * nested :call LoadSession()
+au VimLeave * :call MakeSession()
+
+highlight Pmenu ctermbg=138

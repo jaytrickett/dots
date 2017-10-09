@@ -7,6 +7,11 @@
 			</action>
 		</item>
 
+		<item label="Audacity">
+			<action name="Execute">
+				<execute>audacity</execute>
+			</action>
+		</item>
 		<item label="Gimp">
 			<action name="Execute">
 				<execute>gimp</execute>
@@ -47,25 +52,25 @@
 			<action name="Exit"/>
 		</item>
 		<separator/>
-<item label="Reboot">
-    <action name="Execute">
-        <prompt>
-            Are you sure you want to reboot?
-        </prompt>
-        <execute>
-            sudo shutdown -r now
-        </execute>
-    </action>
-</item>
-<item label="Shutdown">
-    <action name="Execute">
-        <prompt>
-            Are you sure you want to shutdown?
-        </prompt>
-        <execute>
-            sudo shutdown -h now
-        </execute>
-    </action>
-</item>
+		<item label="Reboot">
+			<action name="Execute">
+				<prompt>
+					Are you sure you want to reboot?
+				</prompt>
+				<execute>
+					sudo shutdown -r now
+				</execute>
+			</action>
+		</item>
+		<item label="Shutdown">
+			<action name="Execute">
+				<prompt>
+					Are you sure you want to shutdown?
+				</prompt>
+				<execute>
+					sudo shutdown -h now
+				</execute>
+			</action>
+		</item>
 	</menu>
 </openbox_menu>

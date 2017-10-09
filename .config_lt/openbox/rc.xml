@@ -179,9 +179,50 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
+    <!-- Vlc Multimedia Keys -->
+		<keybind key="XF86AudioPlay">
+			<action name="Execute">
+				<command>qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause</command>
+			</action>
+		</keybind>
+		<keybind key="XF86AudioPrev">
+			<action name="Execute">
+				<command>qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous</command>
+			</action>
+		</keybind>
+		<keybind key="XF86AudioNext">
+			<action name="Execute">
+				<command>qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next</command>
+			</action>
+		</keybind>
+		<keybind key="XF86AudioStop">
+			<action name="Execute">
+				<command>qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop</command>
+			</action>
+		</keybind>
+    <keybind key="C-A-m">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>vlc</name>
+        </startupnotify>
+        <command>vlc .playlist.xspf</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-Menu">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>gmrun</name>
+        </startupnotify>
+        <command>gmrun</command>
+      </action>
+    </keybind>
 		<keybind key="Menu">
-			<action name="ShowMenu"><menu>root-menu</menu>menu></action>action>
-		</keybind>keybind>
+			<action name="ShowMENU">
+				<menu>root-menu</menu>
+			</action>
+		</keybind>>
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
         <to>left</to>
@@ -814,7 +855,7 @@
       <desktop>4</desktop>
     </application>
     <application class="vlc">
-      <desktop>4</desktop>
+      <desktop>2</desktop>
     </application>
     <!--
   # this is an example with comments through out. use these to make your
