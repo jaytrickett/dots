@@ -29,6 +29,7 @@ Plugin 'gregsexton/gitv'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'fatih/vim-go'
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()
 

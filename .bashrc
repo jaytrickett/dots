@@ -112,7 +112,6 @@ alias sp='source .profile && source .bashrc'
 alias lr='find .'
 alias f="ranger"
 alias sshfs-ch='echo -e "\n Start \n sshfs -o "IdentityFile=~/path/to/pem" user@192.168.1.1:/remote/directory ~/local/directory \n Stop \n fuseremount -u ~/local/directory \n"'
-alias dbox='VBoxManage startvm dev-pool --type headless'
 alias gray='feh --bg-scale ~/.bg/gray.png'
 alias speed='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 alias myscrot='scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png'
@@ -169,4 +168,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export EDITOR="vim"
 
-export BROWSER=w3m
+export BROWSER=chromium-browser
+
+[[ -s "/home/jason/.gvm/scripts/gvm" ]] && source "/home/jason/.gvm/scripts/gvm"
+
+eval "$(direnv hook bash)"
