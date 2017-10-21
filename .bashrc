@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export TERM=screen-256color
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -104,9 +106,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias x='exit'
 alias c='clear'
-alias v='vim'
+alias v='nvim'
 alias cd.='cd && ls'
-alias v.='vim .'
+alias v.='nvim .'
 alias gti='git'
 alias sp='source .profile && source .bashrc'
 alias lr='find .'
@@ -138,13 +140,13 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+#if ! shopt -oq posix; then
+  #if [ -f /usr/share/bash-completion/bash_completion ]; then
+    #. /usr/share/bash-completion/bash_completion
+  #elif [ -f /etc/bash_completion ]; then
+    #. /etc/bash_completion
+  #fi
+#fi
 
 #Disable standard behavior for ctrl-s and ctrl-q so I can map ctrl-s to save in vim
 stty -ixon
@@ -173,3 +175,4 @@ export BROWSER=chromium-browser
 [[ -s "/home/jason/.gvm/scripts/gvm" ]] && source "/home/jason/.gvm/scripts/gvm"
 
 eval "$(direnv hook bash)"
+

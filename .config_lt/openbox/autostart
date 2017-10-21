@@ -11,13 +11,11 @@ sleep 1 &
 compton &
 sleep 1 &
 
-xfce4-power-manager &
-
 pnmixer &
 
 tint2 &
 
-uxterm -e tmux -2 &
+sakura -e tmux -2 &
 
 conky &
 

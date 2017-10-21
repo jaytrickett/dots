@@ -1,4 +1,4 @@
-set nocompatible
+"set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -7,9 +7,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "Managed by Vundle
-Plugin 'bling/vim-airline.git'
+"Plugin 'bling/vim-airline.git'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'powerline/fonts.git'
+"Plugin 'powerline/fonts.git'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'jonathanfilip/vim-lucius.git'
 Plugin 'Valloric/YoucompleteMe'
@@ -30,11 +31,15 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'flazz/vim-colorschemes'
+"Plugin 'felixhummel/setcolors.vim'
+
 
 call vundle#end()
 
 filetype plugin indent on
 runtime macros/matchit.vim
+"set termguicolors
 set encoding=utf-8
 set t_Co=256
 set relativenumber
@@ -59,9 +64,6 @@ set shiftwidth=4
 set noexpandtab
 set pastetoggle=<F2>
 
-"Colorscheme
-set background=light
-colorscheme ron
 	
 "Custom Key-Bindings
 
@@ -131,25 +133,26 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "Airline settings
 set laststatus=2
 let g:airline_powerline_fonts=1
-let g:airline_theme='cool'
+let g:airline_theme='base16_default'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
+
 "NERDTree stuff
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "M",
-    \ "Staged"    : "*",
-    \ "Untracked" : "!T",
-    \ "Renamed"   : "R",
-    \ "Unmerged"  : "!M",
-    \ "Deleted"   : "D",
-    \ "Dirty"     : "P",
-    \ "Clean"     : "C",
-    \ 'Ignored'   : 'I',
-    \ "Unknown"   : "?"
-    \ }
-let g:NERDTreeDirArrowExpandable = '>'
-let g:NERDTreeDirArrowCollapsible = '^'
+"let g:NERDTreeIndicatorMapCustom = {
+    "\ "Modified"  : "M",
+    "\ "Staged"    : "*",
+    "\ "Untracked" : "!T",
+    "\ "Renamed"   : "R",
+    "\ "Unmerged"  : "!M",
+    "\ "Deleted"   : "D",
+    "\ "Dirty"     : "P",
+    "\ "Clean"     : "C",
+    "\ 'Ignored'   : 'I',
+    "\ "Unknown"   : "?"
+    "\ }
+"let g:NERDTreeDirArrowExpandable = '>'
+"let g:NERDTreeDirArrowCollapsible = '^'
 let NERDTreeQuitOnOpen=1
 
 "Syntastic settings
@@ -161,8 +164,8 @@ set mouse=a
 function! MakeSession()
   let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
   if (filewritable(b:sessiondir) != 2)
-    exe 'silent !mkdir -p ' b:sessiondir
-    redraw!
+	exe 'silent !mkdir -p ' b:sessiondir
+	redraw!
   endif
   let b:filename = b:sessiondir . '/session.vim'
   exe "mksession! " . b:filename
@@ -172,12 +175,16 @@ function! LoadSession()
   let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
   let b:sessionfile = b:sessiondir . "/session.vim"
   if (filereadable(b:sessionfile))
-    exe 'source ' b:sessionfile
+	exe 'source ' b:sessionfile
   else
-    echo "No session loaded."
+	echo "No session loaded."
   endif
 endfunction
 au VimEnter * nested :call LoadSession()
 au VimLeave * :call MakeSession()
 
-highlight Pmenu ctermbg=138
+"Colorscheme
+"set background=light
+colorscheme ron
+
+highlight Pmenu ctermbg=138 

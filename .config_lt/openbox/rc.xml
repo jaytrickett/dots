@@ -209,7 +209,7 @@
         <command>clementine</command>
       </action>
     </keybind>
-    <keybind key="C-A-Menu">
+    <keybind key="C-A-p">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
@@ -295,6 +295,16 @@
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
+	<keybind key="C-S-A-Left">
+		<action name="MoveResizeTo">
+			<monitor>1</monitor>
+		</action>
+	</keybind>
+	<keybind key="C-S-A-Right">
+		<action name="MoveResizeTo">
+			<monitor>2</monitor>
+		</action>
+	</keybind>
     <keybind key="A-F4">
       <action name="Close"/>
     </keybind>
@@ -395,7 +405,7 @@
           <enabled>true</enabled>
           <name>uxterm</name>
         </startupnotify>
-        <command>uxterm -e tmux -2</command>
+        <command>sakura -e tmux -2</command>
       </action>
     </keybind>
     <keybind key="C-A-b">
@@ -452,22 +462,13 @@
         <command>gimp</command>
       </action>
     </keybind>
-    <keybind key="C-A-p">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>pidgin</name>
-        </startupnotify>
-        <command>pidgin</command>
-      </action>
-    </keybind>
     <keybind key="C-A-x">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
           <name>logout</name>
         </startupnotify>
-        <command>slimlock</command>
+        <command>lxqt-leave</command>
       </action>
     </keybind>
     <!-- Launch screenshot when Print is pressed -->
@@ -839,7 +840,7 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
-    <application name="xterm">
+    <application name="sakura">
       <decor>no</decor>
       <maximized>yes</maximized>
     </application>

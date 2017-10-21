@@ -1,0 +1,47 @@
+#!/bin/bash
+gdrive=/usr/bin/inotify-hookable -w /home/jason/tb/Gdrive/ -i ".grive*" -c "/home/jason/bin/grive --path /home/jason/tb/Gdrive --new-rev"
+gdrive_cmd=$(/usr/bin/inotify-hookable -w /home/jason/tb/Gdrive/ -i ".grive*" -c "/home/jason/bin/grive --path /home/jason/tb/Gdrive --new-rev")
+prog=gdrive
+RETVAL=0
+
+stop() {
+	grep_gdrive=$(ps aux | grep -v grep | grep "${gdrive}")
+	if [ ${#grep_gdrive} -gt 0 ]
+	then
+		echo "Stopping Gdrive!"
+		PID=$(ps x |grep -v grep | grep "${gdrive}" | awk '{ print $1 }')
+		kill -2 "${PID}"
+		RETVAL=$?
+	else
+		echo "Gdrive is not running!"
+	fi	
+	}
+start()	{
+	grep_gdrive=$(ps aux | grep -v grep | grep "${gdrive}")
+	if [ -n "${grep_gdrive}" ]
+	then
+		echo "Gdrive is alreaady running!"
+	else
+			echo "Starting Gdrive!"
+		"nohup $gdrive_cmd &"
+		RETVAL=$?
+	fi
+}
+
+case "$1" in
+	start )
+		start
+		;;
+	stop )
+		stop
+		;;
+	restart )
+		stop
+		start
+		;;
+	*)
+		echo $"Usage: $prog {start|stop|restart}"
+		exit 1
+esac
+
+exit $RETVAL
