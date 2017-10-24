@@ -33,9 +33,9 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
+#if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    #debian_chroot=$(cat /etc/debian_chroot)
+#fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -45,6 +45,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
+
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
@@ -72,21 +73,21 @@ fi
 THEIP=$(/sbin/ifconfig | ack -1 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
 
 if [ "$color_prompt" = yes ]; then
-    PS1="\[\033[01;36m\]\u\[\033[01;32m\]@\[\033[01;35m\]"$THEIP"\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+    PS1="\[\033[01;36m\]\u\[\033[01;32m\]@\[\033[01;35m\]$THEIP\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 else
-    PS1="\u@"$THEIP":\w\$ "
+    PS1="\u@$THEIP:\w\$ "
 fi
 unset color_prompt force_color_prompt
 
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+#case "$TERM" in
+#xterm*|rxvt*)
+    #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    #;;
+#*)
+    #;;
+#esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -127,15 +128,15 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+#if [ -f ~/.bash_aliases ]; then
+    #. ~/.bash_aliases
+#fi
 
 # Additional file containing security sensitive aliases
 
-if [ -f ~/.sensitive ]; then
-    . ~/.sensitive
-fi
+#if [ -f ~/.sensitive ]; then
+    #. ~/.sensitive
+#fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -151,11 +152,9 @@ fi
 #Disable standard behavior for ctrl-s and ctrl-q so I can map ctrl-s to save in vim
 stty -ixon
 
-export PATH="$HOME/.nvm/versions/node/v6.2.2/bin:$PATH"
-
-#export PATH="/usr/sbin:$PATH"
-
 export PATH="/sbin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="/home/jason/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -164,7 +163,7 @@ export NODE_PATH="$HOME/.nvm/versions/node/v6.2.2/bin"
 
 export NODE_PATH="$HOME/.nvm/versions/node/v6.2.2/lib/node_modules:$NODE_PATH"
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.nvm/versions/node/v6.2.2/bin:$PATH"
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 

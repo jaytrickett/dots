@@ -188,3 +188,5 @@ au VimLeave * :call MakeSession()
 colorscheme ron
 
 highlight Pmenu ctermbg=138 
+
+set autowrite
