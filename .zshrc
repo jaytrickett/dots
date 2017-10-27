@@ -73,15 +73,7 @@ export LANG=en_US.UTF-8
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-#POWERLEVEL9K_COLOR_SCHEME='light'
-##POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ssh)
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir vcs)
-#POWERLEVEL9K_USER_BACKGROUND='060'
-#POWERLEVEL9K_MODE='nerdfont-complete'
-
-
 source $ZSH/oh-my-zsh.sh
-
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
