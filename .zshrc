@@ -1,13 +1,13 @@
 # If you come from bash you might have to change your $PATH.
- export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
- export ZSH=/home/jason/.oh-my-zsh
+export ZSH=/home/jason/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="kafeitu"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,8 +53,6 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -75,6 +73,16 @@ export LANG=en_US.UTF-8
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+#POWERLEVEL9K_COLOR_SCHEME='light'
+##POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ssh)
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir vcs)
+#POWERLEVEL9K_USER_BACKGROUND='060'
+#POWERLEVEL9K_MODE='nerdfont-complete'
+
+
+source $ZSH/oh-my-zsh.sh
+
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -83,7 +91,6 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export TERM=screen-256color
 
 alias l='ls -CF'
 alias ll='ls -alF'
@@ -92,20 +99,33 @@ alias x='exit'
 alias c='clear'
 alias v='nvim'
 alias cd.='cd && ls'
-alias v.='nvim .'
 alias gti='git'
-alias sp='source .profile && source .zshrc'
-alias lr='find .'
 alias f="ranger"
 alias sshfs-ch='echo -e "\n Start \n sshfs -o "IdentityFile=~/path/to/pem" user@192.168.1.1:/remote/directory ~/local/directory \n Stop \n fuseremount -u ~/local/directory \n"'
 alias gray='feh --bg-scale ~/.bg/gray.png'
 alias speed='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 alias myscrot='scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png'
 
-#Disable standard behavior for ctrl-s and ctrl-q so I can map ctrl-s to save in vim
-stty -ixon
+#Custom functions
 
-export PATH="/sbin:$PATH"
+sp () {
+PATH=/usr/bin:/user/local/bin:/bin
+source .profile 
+source .zshrc
+}
+
+path () {
+	sed 's/:/\n/g' <<< "$PATH"
+}
+
+#End Custom Funtions
+
+export EDITOR="nvim"
+
+export BROWSER="chromium-browser"
+
+export TERM=xterm-256color
+
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -120,13 +140,6 @@ export PATH="$HOME/.nvm/versions/node/v6.2.2/bin:$PATH"
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export EDITOR="nvim"
-
-export BROWSER="chromium-browser"
-
 [[ -s "/home/jason/.gvm/scripts/gvm" ]] && source "/home/jason/.gvm/scripts/gvm"
 
 eval "$(direnv hook zsh)"
-
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ip ssh)
-POWERLEVEL9K_MODE='nerdfont-complete'

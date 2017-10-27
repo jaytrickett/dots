@@ -7,10 +7,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "Managed by Vundle
-"Plugin 'bling/vim-airline.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'powerline/fonts.git'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'jonathanfilip/vim-lucius.git'
 Plugin 'Valloric/YoucompleteMe'
@@ -85,11 +83,6 @@ noremap <silent> <leader>v		:source ~/.vimrc<CR>
 vnoremap <silent> <leader>v		:source ~/.vimrc<CR>
 inoremap <silent> <leader>v		:source ~/.vimrc<CR>
 
-"ctrl-s to save
-noremap <silent> <C-S>		:update<CR>
-vnoremap <silent> <C-S>		<C-C>:update<CR>
-inoremap <silent> <C-S>		<C-O>:update<CR>
-
 "leader-n to turn off search hightlights
 noremap <silent> <leader>n		:nohlsearch<CR>
 vnoremap <silent> <leader>n		:nohlsearch<CR>
@@ -138,21 +131,7 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 
-"NERDTree stuff
-"let g:NERDTreeIndicatorMapCustom = {
-    "\ "Modified"  : "M",
-    "\ "Staged"    : "*",
-    "\ "Untracked" : "!T",
-    "\ "Renamed"   : "R",
-    "\ "Unmerged"  : "!M",
-    "\ "Deleted"   : "D",
-    "\ "Dirty"     : "P",
-    "\ "Clean"     : "C",
-    "\ 'Ignored'   : 'I',
-    "\ "Unknown"   : "?"
-    "\ }
-"let g:NERDTreeDirArrowExpandable = '>'
-"let g:NERDTreeDirArrowCollapsible = '^'
+"NERDTree stuff	
 let NERDTreeQuitOnOpen=1
 
 "Syntastic settings
