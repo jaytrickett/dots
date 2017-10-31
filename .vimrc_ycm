@@ -168,4 +168,9 @@ colorscheme ron
 
 highlight Pmenu ctermbg=138 
 
+"Vim-Go
 set autowrite
+let g:go_list_type = "quickfix"
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+map <C-a> :cclose<CR>

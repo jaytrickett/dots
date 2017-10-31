@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias l='ls -CF'
-alias ll='ls -alF'
+alias ll='ls -lF'
 alias la='ls -A'
 alias x='exit'
 alias c='clear'
