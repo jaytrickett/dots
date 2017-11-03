@@ -1,0 +1,22 @@
+#!/bin/sh
+
+prjname=$1
+
+mkdir "$prjname"
+
+mkdir "$PWD/$prjname/src"
+mkdir "$PWD/$prjname/src/github.com"
+mkdir "$PWD/$prjname/src/github.com/jaytrickett"
+mkdir "$PWD/$prjname/src/github.com/jaytrickett/$prjname"
+mkdir "$PWD/$prjname/pkg"
+mkdir "$PWD/$prjname/bin"
+
+cd "$PWD/$prjname"
+
+echo "export GOPATH=$PWD\nPATH=$PWD/bin:$PATH" > "$PWD/.envrc"
+
+direnv allow
+
+file="src/github.com/jaytrickett/$prjname/$prjname.go"
+
+nvim $file
