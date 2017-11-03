@@ -136,3 +136,5 @@ export PATH="$HOME/.nvm/versions/node/v6.2.2/bin:$PATH"
 [[ -s "/home/jason/.gvm/scripts/gvm" ]] && source "/home/jason/.gvm/scripts/gvm"
 
 eval "$(direnv hook zsh)"
+
+bindkey -v

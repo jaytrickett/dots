@@ -13,10 +13,12 @@ mkdir "$PWD/$prjname/bin"
 
 cd "$PWD/$prjname"
 
-echo "export GOPATH=$PWD\nPATH=$PWD/bin:$PATH" > "$PWD/.envrc"
+printf "export GOPATH=\$PWD\nPATH=\$PWD/bin:\$PATH" > "$PWD/.envrc"
 
 direnv allow
 
-file="src/github.com/jaytrickett/$prjname/$prjname.go"
+srcpath="src/github.com/jaytrickett/$prjname"
 
-nvim $file
+git init "$srcpath"
+
+nvim "$srcpath/$prjname.go"
