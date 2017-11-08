@@ -85,7 +85,5 @@ Up:${alignr 4}${upspeed wlo1}
 Down:${alignr 4}${downspeed wlo1}
 
 
-${alignc}${color #EDED16}${exec date +"%r"}
-${alignc}${color #EDED16}${exec date +"%D"}
 
 

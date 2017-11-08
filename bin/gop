@@ -13,7 +13,7 @@ mkdir "$PWD/$prjname/bin"
 
 cd "$PWD/$prjname"
 
-printf "export GOPATH=\$PWD\nPATH=\$PWD/bin:\$PATH" > "$PWD/.envrc"
+printf "export GOPATH=\$PWD\nexport GOBIN=\$PWD/bin\nexport PATH=\$PWD/bin:\$PATH" > "$PWD/.envrc"
 
 direnv allow
 
